@@ -11,7 +11,7 @@ jobs:
   Build-Packages:
     runs-on: ubuntu-latest
     steps:
-      - uses: https://github.com/actions/checkout@v5
+      - uses: actions/checkout@v5
 
       - run: apt update
 
