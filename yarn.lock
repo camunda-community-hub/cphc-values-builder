@@ -3121,9 +3121,9 @@ sass-dev@^1.0.10:
     esbuild-sass-plugin "2.10.0"
     watcher "2.3.0"
 
-sass@^1.63.0, sass@^1.94.0:
+sass@^1.63.0, sass@^1.64.2:
   version "1.94.0"
-  resolved "https://registry.npmjs.org/sass/-/sass-1.94.0.tgz"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.94.0.tgz#a04198d8940358ca6ad537d2074051edbbe7c1a7"
   integrity sha512-Dqh7SiYcaFtdv5Wvku6QgS5IGPm281L+ZtVD1U2FJa7Q0EFRlq8Z3sjYtz6gYObsYThUOz9ArwFqPZx+1azILQ==
   dependencies:
     chokidar "^4.0.0"
