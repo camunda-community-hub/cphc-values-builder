@@ -2,24 +2,18 @@ name: Build cphc
 run-name: ${{ github.actor }} Build CPHC Values
 on: [push]
 
-env:
-  DOCKER_HOST: tcp://docker:2376
-  DOCKER_CERT_PATH: /certs/client
-  DOCKER_TLS_VERIFY: "1"
-
 jobs:
   Build-Packages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
 
-      - run: apt update
-
-      - run: apt install -y docker.io
-
       - run: docker build -t git.jlscode.com/jesse/cphc-values-builder:latest .
+
       - run: docker login git.jlscode.com -u $USERNAME -p $PASSWORD
+        if: ${{ secrets.DOCKER_REGISTRY_USERNAME && secrets.DOCKER_REGISTRY_PASSWORD }}
         env:
           USERNAME: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+
       - run: docker push git.jlscode.com/jesse/cphc-values-builder:latest
