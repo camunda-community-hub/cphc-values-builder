@@ -1,5 +1,5 @@
 name: Build cphc
-run-name: ${{ gitea.actor }} Build CPHC Values
+run-name: ${{ github.actor }} Build CPHC Values
 on: [push]
 
 env:
